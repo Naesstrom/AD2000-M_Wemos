@@ -19,19 +19,31 @@ Bell is to any signal that you want to use indoors.
 ## Schematic
 <img src="https://i.imgur.com/HWfGYz1.png" width="400" height="400" />
 This uses a 12V input and has a built in voltage divider down to 5V to power the Wemos. Software is basically whatever you want, I'm using either ESP Easy or ESPHome since it's easy to manage with OTA updates.
-**PUSH** is connected to **D3** and is used to release the lock by using automation or a rule in the ESP
-**D0 & D1** is a wiegand interface, actually not tried it yet in production.
-**BELL** is connected to **D4** can trigger anything you want, I have a TTS message in my Google Home when someone pushes it.
-**D6 & D7** on the Wemos is connected to I2C interface to be able to use a GY-21P sensor or anything else using the same protocol.
-**D8** is connected to the Mosfet and will either lock or unlock the lock.
+
+* **PUSH** is connected to **D3** and is used to release the lock by using automation or a rule in the ESP  
+* **D0 & D1** is a wiegand interface, actually not tried it yet in production.  
+* **BELL** is connected to **D4** can trigger anything you want, I have a TTS message in my Google Home when someone pushes it.  
+* **D6 & D7** on the Wemos is connected to I2C interface to be able to use a GY-21P sensor or anything else using the same protocol.  
+* **D8** is connected to the Mosfet and will either lock or unlock the lock.  
 
 ## Components
-1000uF 25V 105C radial ø10x20mm
-UKZ1E101MPM 100uF 25V 85C ø10x16mm
-100nF 50V X7R 2.54mm
-78S05 TO-220 5V 2A
-Cooling fan TO-220 19.5x13x13mm
-IRLZ44NPBF TO-220 N-ch 55V 47A
-1N4001 DO-41 50V 1A
-LED red 5mm flat topp
-3x 10k Ohm resistor
+- 1000uF 25V 105C radial ø10x20mm  
+- UKZ1E101MPM 100uF 25V 85C ø10x16mm  
+- 100nF 50V X7R 2.54mm  
+- 78S05 TO-220 5V 2A  
+- Cooling fan TO-220 19.5x13x13mm  
+- IRLZ44NPBF TO-220 N-ch 55V 47A  
+- 1N4001 DO-41 50V 1A  
+- LED red 5mm flat topp  
+- 3x 10k Ohm resistor  
+
+## Example Rule in ESPEasy
+```
+on AD#PUSH=1 do      //When the Device AD gets a signal on PUSH
+  gpio,15,0          //Set GPIO15 to 0, unlocking the door
+  timerSet,1,5       //Set Timer 1 for the next event in 5 second
+endon
+On Rules#Timer=1 do  //When Timer1 expires, do
+  gpio,15,0          //Set GPIO15 to 1 and locking the door again.
+endon
+```
