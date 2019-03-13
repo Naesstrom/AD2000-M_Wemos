@@ -1,0 +1,50 @@
+*Pick And Place List
+*Company=
+*Author=
+*eMail=
+*
+*Project=AD-2000M_Wemos
+*Date=18:01:06
+*CreatedBy=Fritzing 0.9.3b.04.19.5c895d327c44a3114e5fcc9d8260daf0cbb52806
+*
+*
+*Coordinates in mm, always center of component
+*Origin 0/0=Lower left corner of PCB
+*Rotation in degree (0-360, math. pos.)
+*
+*No;Value;Package;X;Y;Rotation;Side;Name
+1;;THT;38.0943;-37.4986;180;Bottom;GY-21P
+2;;;20.1936;-4.20426;90;Bottom;TXT20
+3;;;10.1415;-4.02731;90;Bottom;TXT20
+4;;;2.40732;-4.69251;90;Bottom;TXT20
+5;330;THT;36.8243;-8.92361;90;Bottom;R3
+6;;;2.53433;-59.7236;0;Bottom;Hole3
+7;;THT;42.3133;-58.8346;90;Bottom;J4
+8;;;15.3489;-4.60475;90;Bottom;TXT20
+9;;;46.6986;-49.8811;180;Bottom;Power plug1
+10;;THT;17.879;-9.70424;90;Bottom;J2
+11;;300 mil [THT];8.27473;-15.2736;180;Bottom;D1
+12;;5 mm [THT];32.3233;-7.65347;-90;Bottom;LED1
+13;1mF;100 mil [THT, electrolytic];31.7443;-33.6886;0;Bottom;C1
+14;10k;THT;22.8543;-24.1636;180;Bottom;R2
+15;;;2.53433;-2.57352;0;Bottom;Hole4
+16;;THT;3.90914;-9.70424;90;Bottom;J3
+17;;;8.6889;-23.2719;0;Bottom;TXT21
+18;;;19.0222;-12.7523;0;Bottom;Via1
+19;;;22.6884;-4.28724;90;Bottom;TXT20
+20;0.1mF;100 mil [THT, electrolytic];31.7443;-17.1786;0;Bottom;C2
+21;;;15.2343;-42.2708;0;Bottom;WeMos D1 Mini1
+22;;;52.6994;-59.7236;0;Bottom;Hole1
+23;;;25.3517;-4.31207;90;Bottom;TXT20
+24;;;52.6994;-2.57352;0;Bottom;Hole2
+25;10k;THT;17.1393;-29.2436;0;Bottom;R4
+26;0.1µF;100 mil [THT, multilayer];31.7443;-12.0986;0;Bottom;C3
+27;;to220v;6.32214;-19.915;0;Bottom;Q1
+28;;;17.688;-4.67728;90;Bottom;TXT20
+29;;;47.3163;-59.3806;0;Bottom;TXT21
+30;5V;to-220-alt;44.0379;-23.5286;90;Bottom;IC1
+31;;;3.63003;-23.3278;0;Bottom;TXT21
+32;;;12.8434;-3.90341;90;Bottom;TXT20
+33;;;37.1621;-59.3389;0;Bottom;TXT21
+34;;;5.06853;-4.60953;90;Bottom;TXT20
+35;10k;THT;22.8543;-21.6236;180;Bottom;R1
