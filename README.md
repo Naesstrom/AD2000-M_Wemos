@@ -37,7 +37,9 @@ This uses a 12V input and has a built in voltage divider down to 5V to power the
 - LED red 5mm flat topp  
 - 3x 10k Ohm resistor  
 
-## Example Rule in ESPEasy
+## Example Rules
+
+#### ESP Easy
 ```
 on AD#PUSH=1 do      //When the Device AD gets a signal on PUSH
   gpio,15,0          //Set GPIO15 to 0, unlocking the door
@@ -46,4 +48,23 @@ endon
 On Rules#Timer=1 do  //When Timer1 expires, do
   gpio,15,0          //Set GPIO15 to 1 and locking the door again.
 endon
+```
+
+#### ESPHome
+```
+switch:
+  - platform: gpio
+    pin: D8
+    name: "Lock mosfet"
+    id: lock_mosfet
+
+binary_sensor:
+  - platform: gpio
+    pin: D3
+    name: "Toggle Lock button"
+    on_press:
+      then:
+        - switch.toggle: lock_mosfet
+        - delay: 5s
+        - switch.toggle: lock_mosfet
 ```
